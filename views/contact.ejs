@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+
+<h1>Contact</h1>
+
+<form method="post" action>
+  <div>
+    <label for="full_name">Name: </label>
+    <input id="full_name" name="full_name" value="<%= full_name %>">
+  </div>
+  <div>
+    <label for="email">Email: </label>
+    <input type="email" id="email" name="email" value="<%= email %>">
+  </div>
+  <div>
+    <label for="comment">Comment: </label>
+    <textarea id="comment" name="comment"><%= comment %></textarea>
+  </div>
+  <div>
+    <input type="submit" name="submit">
+  </div>
+</form>
+
+<%- include('partials/footer') %>

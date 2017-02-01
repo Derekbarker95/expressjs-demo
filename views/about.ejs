@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<h1>About Things</h1>
+
+<ul>
+<%# the following will iterate over the array, things, that was
+to the render method in the route for about in the home.js file %>
+<% for (let thing of things) { %>
+    <li><%= thing %></li>
+<% } %>
+<%# the contents on line will be repeated for however many things there are in
+the array %>
+</ul>
+
+
+<%- include('partials/footer') %>
