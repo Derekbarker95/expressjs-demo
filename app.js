@@ -17,6 +17,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const pg = require('pg');
 
 // Load routers from router folder
 const home = require('./routes/home');
