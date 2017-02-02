@@ -15,6 +15,8 @@
 const Express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const path = require('path');
+const cookieParser = require('cookie-parser');
 
 // Load routers from router folder
 const home = require('./routes/home');
@@ -25,7 +27,21 @@ const app = Express();
 // Configure Express app to use ejs templating for our app's view engine
 app.set('view engine', 'ejs');
 
+app.use(Express.static(path.join(__dirname, 'public')));
+
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cookieParser())
+
+
+app.use(function(req, res, next){
+  if (!req.cookies.luckyNumber) {
+    res.cookie('luckyNumber', 42, {maxAge: 2592000000});
+  }
+  console.log(req.cookies);
+ next();
+});
+
+
 
 // unlike get which only intercepts get method requests
 // use will intercept all requests
