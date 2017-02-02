@@ -21,6 +21,7 @@ const pg = require('pg');
 
 // Load routers from router folder
 const home = require('./routes/home');
+const questions = require('./routes/questions')
 
 // Create an instance of the Express by calling the Express function
 const app = Express();
@@ -65,6 +66,7 @@ app.get('/hello-word', function (request, response) {
 })
 
 app.use('/', home);
+app.use('/questions', questions);
 
 /*
 app.get('/', function (req, res) {

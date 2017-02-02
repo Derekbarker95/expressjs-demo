@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<h1> All questions </h1>
+<% for (let question of questions) {%>
+
+  <h3><%= question.title%>: <h3>
+    <p><%= question.description %></p>
+    <hr>
+
+<%}%>
+
+
+<%- include('../partials/header') %>
